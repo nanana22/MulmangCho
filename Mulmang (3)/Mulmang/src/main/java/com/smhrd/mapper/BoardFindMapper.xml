@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.BoardFindMapper">
+    <!-- 게시글 작성 -->
+    <insert id="BoardFindInsert" parameterType="com.smhrd.domain.BoardFind">
+        insert into TBL_FINDING(user_id, find_name, find_gender,
+        find_handicaped, missing_region, find_feature, find_look, find_desc)
+        values(#{user_id},#{find_name},#{find_gender},#{find_handicaped}
+        ,#{missing_region},#{find_feature},#{find_look},#{find_desc})
+    </insert>
+    
+    
+    <insert id="boardFindInsert2" parameterType="com.smhrd.domain.BoardFind">
+        insert into TBL_FACE(USER_ID, REAL_FACE)
+        values(#{USER_ID}, #{REAL_FACE})
+    </insert>
+    
+</mapper>
