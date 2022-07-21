@@ -169,7 +169,7 @@
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
-										<h5 class="card-title">이름 : <%=br.getPerson_name() %></h5>
+										<p class="card-title">이름 : <%=br.getPerson_name() %></p>
 										<p class="card-text">특징 : <%=br.getReport_feature() %></p>
 										<p class="card-text">발견 지역 :<%=br.getReport_region() %></p>
 										<p class="card-text">

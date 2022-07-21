@@ -29,7 +29,7 @@ $(document).ready( () => {
                            </div>
                            <div class="col-md-8">
                                <div class="card-body">
-                                   <h5 class="card-title">이름 : ${res[i].person_name}</h5>
+                                   <p class="card-text">이름 : ${res[i].person_name}</p>
                                    <p class="card-text">특징 : ${res[i].report_feature}</p>
                                    <p class="card-text">발견 지역 : ${res[i].report_region}</p>
                                    <p class="card-text">
@@ -40,7 +40,7 @@ $(document).ready( () => {
                         
                        </div>
                    </div>
-               </div><
+               </div>
                <div class="col">
                    <div class="card mb-3" style="max-width: 500px;">
                        <div class="row g-0">                            
@@ -52,7 +52,7 @@ $(document).ready( () => {
                            </div>
                            <div class="col-md-8">
                                <div class="card-body">
-                                   <h5class="card-title">이름 : ${res[i+1].person_name}</h5>
+                                   <p class="card-text">이름 : ${res[i+1].person_name}</p>
                                    <p class="card-text">특징 : ${res[i+1].report_feature}</p>
                                    <p class="card-text">발견 지역 : ${res[i+1].report_region}</p>
                                    <p class="card-text">
