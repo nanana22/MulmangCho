@@ -17,6 +17,8 @@ public class Message {
 	@NonNull
 	private String msg_content;
 	private String msg_date;
+	@NonNull
 	private String msg_sender_id;
+	@NonNull
 	private String msg_receiver_id;
 }

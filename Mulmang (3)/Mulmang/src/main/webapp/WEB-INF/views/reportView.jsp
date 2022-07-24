@@ -1,13 +1,12 @@
 <%@page import="com.smhrd.domain.User"%>
 <%@page import="com.mysql.cj.Session"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
-    xmlns:th="http://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
 <meta charset="UTF-8">
 <title>제보 상세페이지</title>
@@ -16,7 +15,7 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="./resources/css/report.css">
+<link rel="stylesheet" href="/resources/css/report.css">
 
 <style>
 .b {
@@ -26,14 +25,16 @@
 }
 </style>
 <script type="text/javascript">
-	function goList(){
+	function goList() {
 		location.href = '/web/reportList.do'
 	}
 </script>
 
 </head>
 <body>
-<% User user = (User)session.getAttribute("user"); %>
+	<%
+		User user = (User) session.getAttribute("user");
+	%>
 	<div class="container">
 		<div class="row">
 			<h4 class="mb-3">제보 상세페이지</h4>
@@ -52,10 +53,7 @@
 				<img src="${rptView.report_photo}" class="img-thumbnail" alt="...">
 			</div>
 			<div class="col-md-6"></div>
-			<br>
-			<br>
-			<br>
-			<br>
+			<br> <br> <br> <br>
 
 		</div>
 
@@ -106,162 +104,142 @@
 				</tbody>
 			</table>
 
-			<div class="mt-6 mlb">
 
-				<a class="btn btn-secondary" data-bs-toggle="offcanvas"
-					href="#offcanvasExample" role="button"
-					aria-controls="offcanvasExample" style="width: 120px;"> 메세지 </a>
-				<button onClick="goList()"class="btn btn-secondary" type="submit"
-					 style="width: 120px;">
-					목록으로</button>
 
-			</div>
 
-			<div class="offcanvas offcanvas-end" tabindex="-1"
-				id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
-				style="width: 800px;">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title" id="offcanvasExampleLabel">메세지 작성</h5>
-					<br>
-					<br>
-					<button type="button" class="btn-close text-reset"
-						data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-				
-				
-				
-				
-				
-				
-				
-				
-				<form action="messageSend.do" method="post">
-					<div class="mb-3 row-g-3">
-						<div class="col-sm-12">
-							<h7 for="exampleFormControlTextarea1" class="form-label">받는이
-							 ${rptView.user_id}</h7>
+			<c:choose>
+				<c:when test="${empty user}">
+
+					<div class="mt-6 mlb">
+
+						<a id="noLogMsg" class="btn btn-secondary" data-bs-toggle="offcanvas"
+							href="/web/loginCk.do" role="button"
+							aria-controls="offcanvasExample" style="width: 120px;"> 메세지 </a>
+						<button onClick="goList()" class="btn btn-secondary" type="submit"
+							style="width: 120px;">목록으로</button>
+
+					</div>
+
+
+
+				</c:when>
+
+				<c:otherwise>
+
+
+
+					<div class="mt-6 mlb">
+
+						<a id="onLogMsg" class="btn btn-secondary" data-bs-toggle="offcanvas"
+							href="#offcanvasExample" role="button"
+							aria-controls="offcanvasExample" style="width: 120px;"> 메세지 </a>
+						<button onClick="goList()" class="btn btn-secondary" type="submit"
+							style="width: 120px;">목록으로</button>
+
+					</div>
+
+
+
+
+					<div class="offcanvas offcanvas-end" tabindex="-1"
+						id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+						style="width: 800px;">
+						<div class="offcanvas-header">
+							<h5 class="offcanvas-title" id="offcanvasExampleLabel">메세지
+								작성</h5>
+							<br> <br>
+							<button type="button" class="btn-close text-reset"
+								data-bs-dismiss="offcanvas" aria-label="Close"></button>
 						</div>
 
-						<div class=" col-sm-12 input-group has-validation">
-							<input type="text" class="form-control" id="look"
-								name="msg_title" placeholder="제목을 입력해주세요" required=""> <br>
+
+
+
+
+
+
+
+						<div class="offcanvas-body">
+							<form id="msgForm" method="post">
+								<div class="mb-3 row-g-3">
+									<div class="col-sm-12">
+										<h7 for="exampleFormControlTextarea1" class="form-label">받는이
+										${rptView.user_id}</h7>
+									</div>
+
+									<div class=" col-sm-12 input-group has-validation">
+										<input type="text" class="form-control" id="look"
+											name="msg_title" placeholder="제목을 입력해주세요" required="">
+										<br>
+									</div>
+
+									<textarea class="form-control" id="exampleFormControlTextarea1"
+										name="msg_content" rows="10"></textarea>
+								</div>
+								
+								<input id="sender" type="hidden" name="msg_sender_id" value="<%=user.getUser_id()%>"> 
+								<input id="receiver" type="hidden" name="msg_receiver_id" value="${rptView.user_id}">
+								<div class="text-center">
+									<!-- Button trigger modal -->
+									<button id="toastStart" class="btn btn-secondary"
+										data-bs-toggle="modal" data-bs-target="#exampleModal">
+										메세지전송</button>
+								</div>
+							</form>
+
+
+
+
+
+
+
+
+							<div class="row">
+								<h4>메세지 리스트</h4>
+
+
+								<table class="table text-center">
+									<thead>
+										<tr>
+											<th scope="col">번호</th>
+											<th scope="col">제목</th>
+											<th scope="col">작성자</th>
+											<th scope="col">날짜</th>
+
+										</tr>
+									</thead>
+									<tbody id="msgList">
+
+
+									</tbody>
+								</table>
+
+
+								<nav aria-label="Page navigation example">
+									<ul class="pagination">
+										<li class="page-item"><a class="page-link" href="#"
+											aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+										</a></li>
+										<li class="page-item"><a class="page-link" href="#">1</a></li>
+										<li class="page-item"><a class="page-link" href="#">2</a></li>
+										<li class="page-item"><a class="page-link" href="#">3</a></li>
+										<li class="page-item"><a class="page-link" href="#"
+											aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+										</a></li>
+									</ul>
+								</nav>
+
+							</div>
 						</div>
-						
-						<textarea class="form-control" id="exampleFormControlTextarea1"
-							name="msg_content" rows="10"></textarea>
 					</div>
-					<div class="text-center">
-						<!-- Button trigger modal -->
-						<button type="submit" id="toastStart" class="btn btn-secondary"
-							data-bs-toggle="modal" data-bs-target="#exampleModal">
-							메세지전송</button>
-					</div>
-					</form>
-					
-					
-					
-					
-					
-					
-					
-					
-                  <div class="row">
-                    <h4>메세지 리스트</h4>
-  
-  
-                    <table class="table text-center">
-                      <thead>
-                        <tr>
-                          <th scope="col">번호</th>
-                          <th scope="col">제목</th>
-                          <th scope="col">작성자</th>
-                          <th scope="col">날짜</th>
-                         
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                         
-                          <td> 
-                            <p class="accordion-header" id="flush-heading1" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
-                             
-                                찾았습니다
-                        
-                            </p>
-                            <div id="flush-collapse1" class="accordion-collapse collapse"  aria-labelledby="flush-heading1" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">제가 창원사람인데 제 동네에서 본듯해요 xxxx-xxxx로 연락주세요</div>
-                            
-                          </div></td>
-                          <td>이정민</td>
-                          <td>2022-12-04</td>
-                       
-                        </tr>
-                       
-        
-                        <tr>
-                          <th scope="row">2</th>
-                          <td> 
-                            <p class="accordion-header" id="flush-heading2" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
-                             어 난가?
-                        
-                            </p>
-                            <div id="flush-collapse2" class="accordion-collapse collapse"  aria-labelledby="flush-heading2" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">나인듯? 뭐지</div>
-                            
-                          </div></td>
-                          <td>이정민</td>
-                          <td>2022-12-04</td>
-                        </tr>
-  
-                     
-                       
-                      
-                        <tr>
-                          <th scope="row">3</th>
-                          <td> 
-                            <p class="accordion-header" id="flush-heading3" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">                           
-                                어라?                        
-                            </p>
-                            <div id="flush-collapse3" class="accordion-collapse collapse"  aria-labelledby="flush-heading3" data-bs-parent="#accordionFlushExample">
-                              <div class="accordion-body">어라라?</div>
-                            
-                          </div></td>
-                          <td>이정민</td>
-                          <td>2022-12-04</td>
-                        </tr>
-                       
-                      </tbody>
-                    </table>
-  
-                    
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination">
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                          </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
-                    
-                  </div>
-				</div>
-			</div>
+				</c:otherwise>
+			</c:choose>
+
+
 		</div>
 
 
-		<br>
-		<br>
+		<br> <br>
 
 		<div class="row gu">
 
@@ -293,21 +271,31 @@
 <!-- 메세지 전송성공 -->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script>
-     $().ready(function () {
-             $("#toastStart").click(function () {
-                 Swal.fire({
-//    position: 'top-end',
-   icon: 'success',
-   title: '메세지 전송 성공',
-   showConfirmButton: false,
-   timer: 1500
- })
-             });
-         });
+<script type="text/javascript">
+ 	$().ready(function() {
+		$("#toastStart").click(function() {
+			
+			
+			
+			
+			
+		});
+	}); 
+	
+
+	$(document).on('click','#noLogMsg',function(){
+		alert('로그인 하세요')
+	})
+
 </script>
+
+
+
+
 <!-- 메세지 전송성공 끗 -->
 
-
+<script type="text/javascript" src="/web/resources/js/msgList.js"></script>
+<script type="text/javascript" src="/web/resources/js/msgForm.js"></script>
+	
 </body>
 </html>

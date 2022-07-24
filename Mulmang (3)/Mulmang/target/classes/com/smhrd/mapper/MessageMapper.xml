@@ -8,10 +8,18 @@
     <!-- 메세지보내기 -->
     <insert id="messageSend" parameterType="com.smhrd.domain.Message">
         
-        INSERT INTO TBL_MESSAGE(msg_title, msg_content) VALUES(#{msg_title}, #{msg_content})
+        INSERT INTO TBL_MESSAGE(msg_title, msg_content, msg_sender_id, msg_receiver_id) 
+        VALUES(#{msg_title}, #{msg_content}, #{msg_sender_id}, #{msg_receiver_id})
         
     </insert>
       
+    
+    <!-- 메세지 출력 -->
+    <select id="messageReceive" resultType="com.smhrd.domain.Message">
+        
+        SELECT * FROM TBL_MESSAGE WHERE msg_receiver_id = #{msg_receiver_id}
+        
+    </select>
       
       
       

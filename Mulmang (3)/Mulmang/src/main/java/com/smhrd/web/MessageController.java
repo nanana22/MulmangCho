@@ -10,19 +10,8 @@ import com.smhrd.mapper.MessageMapper;
 
 @Controller
 public class MessageController {
-	@Autowired
-	MessageMapper mapper;
 	
 	
 	
 	
-	// 메세지 전송
-	@RequestMapping("/messageSend.do")
-	public String msgSend(Message vo) {
-		System.out.println("전송시도");
-		
-		mapper.messageSend(vo);
-		
-		return "redirect:/reportList.do";
-	}
 }
