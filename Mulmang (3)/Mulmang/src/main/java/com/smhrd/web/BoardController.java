@@ -23,10 +23,10 @@ public class BoardController {
 	BoardMapper mapper;
 	
 	//base jsp로이동
-	@RequestMapping("/")
-	public String base() {
-		return "base";
-	}
+//	@RequestMapping("/")
+//	public String base() {
+//		return "base";
+//	}
 	
 
 }

@@ -21,6 +21,7 @@
 
 </head>
 <body>
+	<%@ include file="header.jsp"%>
 <% BoardReport searchKey = (BoardReport)session.getAttribute("keyword"); 
 %>
 	<div class="container">
@@ -224,7 +225,7 @@
 	</div>
 	
 
-
+	<%@ include file="footer.jsp"%>
 	<!--  <script type="text/javascript" src="resources/js/boardSearchList.js"></script>-->
 </body>
 </html>

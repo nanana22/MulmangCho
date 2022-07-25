@@ -19,7 +19,7 @@
 
 </head>
 <body>
-
+<%@ include file="header.jsp" %>
 		<div class="container">
 		<!--action="reportSearch.do"  -->
 			<form id="searchForm" action="reportSearch.do" name="f" method="post">
@@ -144,5 +144,6 @@
 
 	<script type="text/javascript" src="resources/js/boardReportList.js"></script>
 	<!-- <script type="text/javascript" src="resources/js/boardSearchList.js"></script> -->
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

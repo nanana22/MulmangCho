@@ -51,7 +51,13 @@ public class UserController {
 		}
 	}
 	
-	
+	// 로그아웃
+	@RequestMapping("/logOut.do")
+	public String userLogOut(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+		return "index";
+	}
 	
 	// 회원가입
 	@RequestMapping("/userJoin.do")
