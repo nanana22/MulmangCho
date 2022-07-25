@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>제보게시판 검색결과</title>
 <link rel="stylesheet" href="./resources/css/report.css">
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -140,7 +141,7 @@
 
 
 	<div class="container">
-		<h4><a href="/web/reportList.do">등록 리스트</a>>검색결과</h4>
+		<h4><a id="reportB" href="/web/reportList.do">등록 리스트</a>   >   검색결과</h4>
 		<hr>
 		<br>
 		<!-- <div id="child_list">
@@ -153,7 +154,11 @@
 				<% List<BoardReport> list = (List<BoardReport>)session.getAttribute("searchList");
 				if(list.isEmpty()){
 					System.out.println(list);%>
-					<div>검색결과가 없습니다.</div>
+					<div id="resultnone">
+					<img src="./resources/img/searchnoting.png">
+					<p id="p1">검색결과가 없습니다.</p>
+					<p>이름이나 특징이 정확한지 다시한번 확인 부탁드립니다.</p>
+					</div>
 				
 				<%}else{
 								
@@ -197,20 +202,27 @@
 	<br>
 	<br>
 
+	
+
+
 	<div class="container">
 
 
-		<div class="paging">
+				<div class="paging">
 
-			<a href="#" class="bt">이전</a> <a href="#" class="num on">1</a> <a
-				href="#" class="num">2</a> <a href="#" class="num">3</a> <a href="#"
-				class="num">4</a> <a href="#" class="num">5</a> <a href="#"
-				class="bt">다음</a>
+					<a href="#" class="bt">이전</a> 
+					<a href="#" class="num on">1</a> 
+					<a href="#" class="num">2</a> 
+					<a href="#" class="num">3</a> 
+					<a href="#" class="num">4</a> 
+					<a href="#" class="num">5</a> 
+					<a href="#" class="bt">다음</a>
 
-		</div>
+				</div>
 
+			</div>
 	</div>
-	</div>
+	
 
 
 	<!--  <script type="text/javascript" src="resources/js/boardSearchList.js"></script>-->
