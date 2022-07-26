@@ -89,166 +89,170 @@
 							<div class="row">
 								<div class="col-sm-5 col-md-5">
 									<!-- <a href="index.html" id="main-logo">Travel</a> -->
-									<div class="tabulation animate-box">
+								<div class="tabulation animate-box">
 
-										<!-- Nav tabs -->
-										<ul class="nav nav-tabs" role="tablist">
-											<li role="presentation" class="active"><a href="#"
-												aria-controls="flights" role="tab" data-toggle="tab">실종아동검색</a>
-											</li>
-											<li role="presentation"><a href="#"
-												aria-controls="report" role="tab" data-toggle="tab">제보검색</a>
-											</li>
+								  <!-- Nav tabs -->
+								  <ul class="nav nav-tabs" role="tablist">
+									<li id="findItem" role="presentation" class="nav-item active">
+										<a id="findSc" class="nav-link active" href="#" aria-controls="flights" role="tab" data-toggle="tab" data-bs-target="#flights" aria-selected="true">실종아동검색</a>
+									</li>
+									<li id="reportItem"  role="presentation" class="nav-item">
+										 <a id="reportSc" class="nav-link" href="#" aria-controls="report" role="tab" data-toggle="tab" data-bs-target="#report" aria-selected="false">제보검색</a>
+									</li>
+								   
+								 </ul>
 
-										</ul>
-
-										<!-- Tab panes -->
-										<div class="tab-content">
-											<div role="tabpanel" class="tab-pane active" id="flights">
-												<div class="row">
-													<div class="col-xxs-12 col-xs-12 mt">
-														<div class="input-field">
-															<label for="from">이름</label> <input type="text"
-																class="form-control" id="from-place" placeholder="이름" />
-														</div>
-													</div>
-
-													<div class="col-xxs-12 col-xs-6 mt alternate">
-														<div class="input-field">
-															<label for="date-end">성별</label>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">남</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">여</label>
-															</div>
-														</div>
-													</div>
-
-													<div class="col-xxs-12 col-xs-6 mt alternate">
-														<div class="input-field">
-															<label for="date-end">장애여부</label>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">유</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">여</label>
-															</div>
-														</div>
-													</div>
-
-													<div class="col-xxs-12 col-xs-12 mt alternate">
-														<div class="input-field">
-															<label for="date-end">인상착의</label> <input type="text"
-																class="form-control" id="from-place"
-																placeholder="인상착의를 입력해주세요." />
-														</div>
-													</div>
-													<div class="col-xxs-12 col-xs-12 mt alternate">
-														<div class="input-field">
-															<label for="date-end">특징</label> <input type="text"
-																class="form-control" id="from-place"
-																placeholder="특징을 입력해주세요." />
-														</div>
-													</div>
-													<div class="col-xxs-12 col-xs-6 mt alternate">
-														<div class="input-field">
-															<label for="date-end">실종일자</label> <input type="text"
-																class="form-control" id="date-end"
-																placeholder="mm/dd/yyyy" />
-														</div>
-													</div>
-													<div class="col-xxs-12 col-xs-6 mt">
-														<section>
-															<label for="class">실종지역:</label> <select
-																class="cs-select cs-skin-border">
-																<option value="" disabled selected>실종지역</option>
-																<option value="1">서울</option>
-																<option value="2">광주</option>
-																<option value="3">부산</option>
-																<option value="4">대구</option>
-															</select>
-														</section>
-													</div>
-													<div class="col-xs-12">
-														<input type="submit" class="btn btn-primary btn-block"
-															value="실종아동검색">
-													</div>
-												</div>
+								 <!-- Tab panes -->
+								  <div class="tab-content">
+								  
+								   <div role="tabpanel" class="tab-pane show" id="flights" role="tabpanel" aria-labelledby="findSc" >
+								   <form action="#" >
+									  <div class="row">
+										  <div class="col-xxs-12 col-xs-12 mt">
+											  <div class="input-field">
+												  <label for="from">이름</label>
+												  <input type="text" class="form-control" id="from-place" placeholder="이름"/>
+											  </div>
+										  </div>
+										  
+										  <div class="col-xxs-12 col-xs-6 mt alternate">
+											<div class="input-field">
+												<label for="date-end">성별</label>
+												<div class="form-check form-check-inline">
+												  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="여">
+												  <label class="form-check-label" for="inlineRadio2">남</label>
+											  </div>
+												  <div class="form-check form-check-inline">
+													  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="여">
+													  <label class="form-check-label" for="inlineRadio2">여</label>
+												  </div>
 											</div>
-
-											<div role="tabpanel" class="tab-pane" id="hotels">
-												<div class="row">
-													<div class="col-xxs-12 col-xs-12 mt">
-														<div class="input-field">
-															<label for="from">이름</label> <input type="text"
-																class="form-control" id="from-place" placeholder="이름" />
-														</div>
-													</div>
-
-													<div class="col-xxs-12 col-xs-6 mt alternate">
-														<div class="input-field">
-															<label for="date-end">성별</label>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">남</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">여</label>
-															</div>
-														</div>
-													</div>
-
-													<div class="col-xxs-12 col-xs-6 mt alternate">
-														<div class="input-field">
-															<label for="date-end">장애여부</label>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">남</label>
-															</div>
-															<div class="form-check form-check-inline">
-																<input class="form-check-input" type="radio"
-																	name="inlineRadioOptions" id="female" value="여">
-																<label class="form-check-label" for="inlineRadio2">여</label>
-															</div>
-														</div>
-													</div>
-
-													<div class="col-xxs-12 col-xs-12 mt alternate">
-														<div class="input-field">
-															<label for="date-end">인상착의</label> <input type="text"
-																class="form-control" id="from-place" placeholder="" />
-														</div>
-													</div>
-													<div class="col-xxs-12 col-xs-12 mt alternate">
-														<div class="input-field">
-															<label for="date-end">특징</label> <input type="text"
-																class="form-control" id="from-place" placeholder="" />
-														</div>
-													</div>
-
-													<div class="col-xs-12">
-														<input type="submit" class="btn btn-primary btn-block"
-															value="제보 검색">
-													</div>
-												</div>
-											</div>
-
-
 										</div>
-									</div>
+  
+										  <div class="col-xxs-12 col-xs-6 mt alternate">
+											  <div class="input-field">
+												  <label for="date-end">장애여부</label>
+												  <div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="여">
+													<label class="form-check-label" for="inlineRadio2">유</label>
+												</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="inlineRadioOptions" id="female" value="여">
+														<label class="form-check-label" for="inlineRadio2">여</label>
+													</div>
+											  </div>
+										  </div>
+
+										  <div class="col-xxs-12 col-xs-12 mt alternate">
+											  <div class="input-field">
+												  <label for="date-end">인상착의</label>
+												  <input type="text" class="form-control" id="from-place" placeholder="인상착의를 입력해주세요."/>
+											  </div>
+										  </div>
+										  <div class="col-xxs-12 col-xs-12 mt alternate">
+											  <div class="input-field">
+												  <label for="date-end">특징</label>
+												  <input type="text" class="form-control" id="from-place" placeholder="특징을 입력해주세요."/>
+											  </div>
+										  </div>
+										  <div class="col-xxs-12 col-xs-6 mt alternate">
+											  <div class="input-field">
+												  <label for="date-end">실종일자</label>
+												  <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
+											  </div>
+										  </div>
+										  <div class="col-xxs-12 col-xs-6 mt">
+											  <section>
+												  <label for="class">실종지역:</label>
+												  <select class="cs-select cs-skin-border">
+													  <option value="" disabled selected>실종지역</option>
+													  <option value="1">서울</option>
+													  <option value="2">광주</option>
+													  <option value="3">부산</option>
+													  <option value="4">대구</option>
+												  </select>
+											  </section>
+										  </div>
+										  <div class="col-xs-12">
+											  <input type="submit" class="btn btn-primary btn-block" value="실종아동검색">
+										  </div>
+									  </div>
+									  </form>
+								   </div>
+									
+									
+									<div role="tabpanel" class="tab-pane fade" id="report" aria-labelledby="reportSc" >
+									 <form action="reportSearch.do"  mehod="post">								   
+									  <div class="row">
+										  <div class="col-xxs-12 col-xs-12 mt">
+											  <div class="input-field">
+												  <label for="name">이름</label>
+												  <input type="text" name="person_name" class="form-control" id="from-place" placeholder="이름"/>
+											  </div>
+										  </div>
+										  
+										 <div class="col-xxs-12 col-xs-6 mt alternate">
+										  <div class="input-field">
+											  <label for="date-end">성별</label>
+											  <div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="gender" id="male" value="여">
+												<label class="form-check-label" for="inlineRadio2">남</label>
+											</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="gender" id="female" value="여">
+													<label class="form-check-label" for="inlineRadio2">여</label>
+												</div>
+										  </div>
+									  </div>
+
+
+										<div class="col-xxs-12 col-xs-12 mt alternate">
+											<div class="input-field">
+												<label for="date-end">특징</label>
+												<input type="text" name="report_feature" class="form-control" id="from-place" placeholder="특징을 입력하세요"/>
+											</div>
+										</div>
+										<div class="col-xxs-12 col-xs-12 mt alternate">
+											<div class="input-field">
+												<label for="date-end">설명</label>
+												<input type="text" name="report_desc" class="form-control" id="from-place" placeholder="설명을 입력하세요"/>
+											</div>
+										</div>
+										  
+										  
+										  <div class="col-xxs-12 col-xs-6 mt">
+											  <section>
+												  <label for="class">발견지역:</label>
+												  <select name="report_region" class="cs-select cs-skin-border">
+													<option selected value="all">발견 지역</option>
+													<option value="서울특별시">서울특별시</option>
+													<option value="경기도">경기도</option>
+													<option value="강원도">강원도</option>
+													<option value="충청북도">충청북도</option>
+													<option value="충청남도">충청남도</option>
+													<option value="경상남도">경상남도</option>
+													<option value="경상북도">경상북도</option>
+													<option value="전라남도">전라남도</option>
+													<option value="전라북도">전라북도</option>
+													<option value="대전광역시">대전광역시</option>
+													<option value="대구광역시">대구광역시</option>
+													<option value="부산광역시">부산광역시</option>
+													<option value="광주광역시">광주광역시</option>
+													<option value="인천광역시">인천광역시</option>
+												  </select>
+											  </section>
+										  </div>
+										
+										  <div class="col-xs-12">
+											  <input type="submit" class="btn btn-primary btn-block" value="제보 검색">
+										  </div>
+									  </div>
+									  </form>
+								   </div>
+
+								   
+								</div>
+							</div>
 
 								</div>
 
@@ -633,8 +637,8 @@
 						</span>
 						<div class="feature-copy">
 							<h3>이민지</h3>
-							<p>역할 적기</p>
-							<p>번호 적기</p>
+							<p>아동제보 게시판 (목록 및 상세페이지, 검색 및 메세지 기능) 서버 구현</p>
+							<p>010-2297-5412</p>
 						</div>
 					</div>
 
@@ -704,6 +708,38 @@
 
 	<!-- Main JS -->
 	<script src="/web/resources/main/js/main.js"></script>
+	<script type="text/javascript">
+	$(document).on("click","#findSc",function(){
+
+	    $('#findItem').prop('class','nav-item active');
+	    $('#reportItem').prop('class','nav-item');
+	    $('#findSc').prop('aria-selected','true');
+	    $('#findSc').prop('class','nav-link active');
+	    $('#reportSc').prop('aria-selected','false');
+	    $('#reportSc').prop('class','nav-link')
+	    $('#flights').prop('class','tab-pane show');
+	    $('#report').prop('class','tab-pane fade')
+	    
+
+	})
+
+
+
+
+	$(document).on("click","#reportSc",function(){
+
+	    $('#reportItem').prop('class','nav-item active');
+	    $('#findItem').prop('class','nav-item');
+	    $('#reportSc').prop('aria-selected','true');
+	    $('#findSc').prop('aria-selected','false');
+	    $('#reportSc').prop('class','nav-link active');
+	    $('#findSc').prop('class','nav-link')
+	    $('#report').prop('class','tab-pane show');
+	    $('#flights').prop('class','tab-pane fade')
+	    
+
+	})
+	</script>
 	<%@ include file="footer.jsp" %>
 
 </body>

@@ -292,6 +292,7 @@
 
 	$(document).on('click','#noLogMsg',function(){
 		alert('로그인 하세요')
+		location.href = '/web/loginCk.do'
 	})
 
 </script>

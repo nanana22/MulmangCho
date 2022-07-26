@@ -20,7 +20,7 @@
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
 						<h1 id="fh5co-logo">
-							<a href="#">물망초</a>
+							<a href="/web/">물망초</a>
 						</h1>
 						<!-- <i class="icon-airplane"></i>  아이콘 코드 -->
 						<!-- START #fh5co-menu-wrap -->
