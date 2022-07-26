@@ -7,13 +7,16 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.smhrd.domain.BoardFind;
+import com.smhrd.domain.Face;
 import com.smhrd.mapper.BoardFindMapper;
 
 @Controller
@@ -23,7 +26,7 @@ public class BoardFindController {
 	// DI(Dependency Injection) 의존성 주입
 	@Autowired // 메모리에 있는 객체를 끌어다가 집어넣어라
 	BoardFindMapper mapper;
-	
+	Face mapper2;
 	// ajax 요청을 받아서 글데이터를 응답
 //	@RequestMapping("/boardFindWrite1.do")
 //	public String boardFindInsert() { ////메서드와 요청url을 매핑
@@ -31,7 +34,6 @@ public class BoardFindController {
 //		return "find_write_1";
 //	}
 	
-
 	
 	
 	@RequestMapping("/boardFindWrite1.do")
@@ -48,6 +50,17 @@ public class BoardFindController {
 		    //session.setAttribute("user", bfif);
 		    return "find_write_2"; 
 		}
+		
+	}
+	
+	
+	
+	@PostMapping("/boardFindWrite2.do")
+	public void uploadAjaxPost(MultipartFile[] uploadFile, Model model) {
+		
+		
+		System.out.println("이크");
+		int face1 = mapper2.BoardFindInsert2(face);
 		
 	}
 	

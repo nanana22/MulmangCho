@@ -17,7 +17,7 @@ public interface BoardFindMapper {
 	
 	public List<BoardFind> boardFindInsert2();	
 	
-	public BoardFind boardFindInsert2(BoardFind bf2);
+
 	
 	
 }
