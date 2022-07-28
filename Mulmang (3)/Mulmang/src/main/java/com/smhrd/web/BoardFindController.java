@@ -48,22 +48,14 @@ public class BoardFindController {
 		}else {
 			HttpSession session = request.getSession();
 		    //session.setAttribute("user", bfif);
-		    return "find_write_2"; 
+		    return "redirect:/uploadForm"; 
 		}
 		
 	}
 	
 	
 	
-	@PostMapping("/boardFindWrite2.do")
-	public void uploadAjaxPost(MultipartFile[] uploadFile, Model model) {
-		
-		
-		System.out.println("이크");
-		int face1 = mapper2.BoardFindInsert2(face);
-		
-	}
-	
+
 //	public @ResponseBody String joinApplication(MultipartHttpServletRequest request) {
 //		
 //	}

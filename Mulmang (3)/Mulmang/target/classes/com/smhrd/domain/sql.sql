@@ -13,3 +13,8 @@ INSERT INTO board(title, writer, content)
 values('스프링 게시판', '이민지', '즐거운 게시판 만들기');
 
 delete from board;
+
+
+select * from TBL_FACE 
+-- 근데 중요한건 이 다음것 까지에요
+

@@ -47,7 +47,7 @@ public class UserController {
 			//잠시 테스트로 수정함 -김훈겸
 	        HttpSession session = request.getSession();
 	        session.setAttribute("user", usif);
-			return "find_write_1"; 			
+			return "find_write_1"; 			// controller로 향하는거니까 redirect:/ 붙여줘야겠죠 네  redirect:/uploadForm
 		}
 	}
 	
